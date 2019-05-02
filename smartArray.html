@@ -1,0 +1,105 @@
+<!DOCTYPE>
+<html>
+  <link rel="stylesheet" type="text/css" href="daniel_palacio.css">
+  <title>Smart Char Array</title>
+  <div class="head">
+    <h3 class="back"><a href="projects.html">Back</a></h3>
+    <ul>
+      <li id="projects_center">Smart Signed Char Array</li>
+    </ul>
+  </div>
+  <body class="main_body">
+    <div id="code_in_bubble_smart">
+      <pre style='color:#000000;background:#D3D3D3;'><span style='color:#3f5fbf; '>/***</span>
+      <span style='color:#3f5fbf; '>&#xa0;*  File: a2.hpp</span>
+      <span style='color:#3f5fbf; '>&#xa0;*  Author: Daniel Palacio &lt;dpalacio@buffalo.edu></span>
+      <span style='color:#3f5fbf; '>&#xa0;*/</span>
+
+      <span style='color:#004a43; '>#</span><span style='color:#004a43; '>ifndef</span><span style='color:#004a43; '> A2_HPP</span>
+      <span style='color:#004a43; '>#</span><span style='color:#004a43; '>define</span><span style='color:#004a43; '> A2_HPP</span>
+
+      <span style='color:#004a43; '>#</span><span style='color:#004a43; '>include </span><span style='color:#800000; '>&lt;</span><span style='color:#40015a; '>algorithm</span><span style='color:#800000; '>></span>
+
+      <span style='color:#400000; font-weight:bold; '>using</span> <span style='color:#400000; font-weight:bold; '>namespace</span> <span style='color:#00dddd; '>std</span><span style='color:#806030; '>;</span>
+      <span style='color:#400000; font-weight:bold; '>class</span> sorted_sc_array <span style='color:#806030; '>{</span>
+      <span style='color:#400000; font-weight:bold; '>public</span><span style='color:#e34adc; '>:</span>
+          sorted_sc_array<span style='color:#806030; '>(</span><span style='color:#806030; '>)</span> <span style='color:#806030; '>:</span> size_<span style='color:#806030; '>(</span><span style='color:#c00000; '>0</span><span style='color:#806030; '>)</span><span style='color:#806030; '>,</span> ptr_<span style='color:#806030; '>(</span><span style='color:#400000; font-weight:bold; '>nullptr</span><span style='color:#806030; '>)</span> <span style='color:#806030; '>{</span> <span style='color:#806030; '>}</span>
+
+          <span style='color:#806030; '>~</span>sorted_sc_array<span style='color:#806030; '>(</span><span style='color:#806030; '>)</span> <span style='color:#806030; '>{</span> <span style='color:#400000; font-weight:bold; '>delete</span><span style='color:#806030; '>[</span><span style='color:#806030; '>]</span> ptr_<span style='color:#806030; '>;</span> <span style='color:#806030; '>}</span>
+
+          sorted_sc_array<span style='color:#806030; '>(</span><span style='color:#400000; font-weight:bold; '>const</span> sorted_sc_array<span style='color:#806030; '>&amp;</span> A<span style='color:#806030; '>)</span><span style='color:#806030; '>{</span>
+
+          size_ <span style='color:#806030; '>=</span> A<span style='color:#806030; '>.</span>size_<span style='color:#806030; '>;</span>
+          cap <span style='color:#806030; '>=</span> A<span style='color:#806030; '>.</span>cap<span style='color:#806030; '>;</span>
+          ptr_ <span style='color:#806030; '>=</span> <span style='color:#400000; font-weight:bold; '>new</span> <span style='color:#400000; font-weight:bold; '>signed</span> <span style='color:#400000; font-weight:bold; '>char</span> <span style='color:#806030; '>[</span>cap<span style='color:#806030; '>]</span><span style='color:#806030; '>;</span>
+          <span style='color:#800040; '>copy</span><span style='color:#806030; '>(</span>A<span style='color:#806030; '>.</span>ptr_<span style='color:#806030; '>,</span>A<span style='color:#806030; '>.</span>ptr_<span style='color:#806030; '>+</span>size_<span style='color:#806030; '>,</span>ptr_<span style='color:#806030; '>)</span><span style='color:#806030; '>;</span>
+          <span style='color:#806030; '>}</span>
+          <span style='color:#c34e00; '>/*</span>
+      <span style='color:#c34e00; '>&#xa0;&#xa0;&#xa0;&#xa0;* This method handles the equal sign operator, which handles a deep copy of</span>
+      <span style='color:#c34e00; '>&#xa0;&#xa0;&#xa0;&#xa0;* the contents of one smart array to another.</span>
+      <span style='color:#c34e00; '>&#xa0;&#xa0;&#xa0;&#xa0;*/</span>
+          sorted_sc_array<span style='color:#806030; '>&amp;</span> <span style='color:#400000; font-weight:bold; '>operator</span><span style='color:#806030; '>=</span><span style='color:#806030; '>(</span><span style='color:#400000; font-weight:bold; '>const</span> sorted_sc_array<span style='color:#806030; '>&amp;</span> A<span style='color:#806030; '>)</span><span style='color:#806030; '>{</span>
+            <span style='color:#400000; font-weight:bold; '>if</span><span style='color:#806030; '>(</span><span style='color:#400000; font-weight:bold; '>this</span> <span style='color:#806030; '>=</span><span style='color:#806030; '>=</span> <span style='color:#806030; '>&amp;</span>A<span style='color:#806030; '>)</span><span style='color:#806030; '>{</span>
+              <span style='color:#c34e00; '>//delete[] ptr_;</span>
+              <span style='color:#400000; font-weight:bold; '>return</span> <span style='color:#806030; '>*</span><span style='color:#400000; font-weight:bold; '>this</span><span style='color:#806030; '>;</span>
+            <span style='color:#806030; '>}</span>
+              <span style='color:#400000; font-weight:bold; '>delete</span><span style='color:#806030; '>[</span><span style='color:#806030; '>]</span> ptr_<span style='color:#806030; '>;</span>
+             size_ <span style='color:#806030; '>=</span> A<span style='color:#806030; '>.</span>size_<span style='color:#806030; '>;</span>
+             cap <span style='color:#806030; '>=</span> A<span style='color:#806030; '>.</span>cap<span style='color:#806030; '>;</span>
+
+           <span style='color:#400000; font-weight:bold; '>if</span><span style='color:#806030; '>(</span>size_<span style='color:#806030; '>!</span><span style='color:#806030; '>=</span><span style='color:#c00000; '>0</span><span style='color:#806030; '>)</span><span style='color:#806030; '>{</span>
+             ptr_ <span style='color:#806030; '>=</span> <span style='color:#400000; font-weight:bold; '>new</span> <span style='color:#400000; font-weight:bold; '>signed</span> <span style='color:#400000; font-weight:bold; '>char</span><span style='color:#806030; '>[</span>cap<span style='color:#806030; '>]</span><span style='color:#806030; '>;</span>
+             <span style='color:#800040; '>copy</span><span style='color:#806030; '>(</span>A<span style='color:#806030; '>.</span>ptr_<span style='color:#806030; '>,</span>A<span style='color:#806030; '>.</span>ptr_<span style='color:#806030; '>+</span>size_<span style='color:#806030; '>,</span>ptr_<span style='color:#806030; '>)</span><span style='color:#806030; '>;</span>
+           <span style='color:#806030; '>}</span>
+           <span style='color:#400000; font-weight:bold; '>return</span> <span style='color:#806030; '>*</span><span style='color:#400000; font-weight:bold; '>this</span><span style='color:#806030; '>;</span>
+          <span style='color:#806030; '>}</span>
+
+          <span style='color:#c34e00; '>// RETURNS SIZE OF THE ARRAY (i.e. HOW MANY ELEMENTS IT STORES)</span>
+          <span style='color:#400000; font-weight:bold; '>int</span> size<span style='color:#806030; '>(</span><span style='color:#806030; '>)</span> <span style='color:#400000; font-weight:bold; '>const</span> <span style='color:#806030; '>{</span> <span style='color:#400000; font-weight:bold; '>return</span> size_<span style='color:#806030; '>;</span> <span style='color:#806030; '>}</span>
+
+          <span style='color:#c34e00; '>// RETURNS RAW POINTER TO THE ACTUAL DATA, CAN BE INVOKED AT ANY TIME</span>
+          <span style='color:#400000; font-weight:bold; '>const</span> <span style='color:#400000; font-weight:bold; '>signed</span> <span style='color:#400000; font-weight:bold; '>char</span><span style='color:#806030; '>*</span> data<span style='color:#806030; '>(</span><span style='color:#806030; '>)</span> <span style='color:#400000; font-weight:bold; '>const</span> <span style='color:#806030; '>{</span>
+           <span style='color:#800040; '>sort</span><span style='color:#806030; '>(</span>ptr_<span style='color:#806030; '>,</span>ptr_<span style='color:#806030; '>+</span>size_<span style='color:#806030; '>)</span><span style='color:#806030; '>;</span>
+            <span style='color:#400000; font-weight:bold; '>return</span> ptr_<span style='color:#806030; '>;</span>
+            <span style='color:#400000; font-weight:bold; '>delete</span><span style='color:#806030; '>[</span><span style='color:#806030; '>]</span> ptr_<span style='color:#806030; '>;</span>
+          <span style='color:#806030; '>}</span>
+
+
+          <span style='color:#3f5fbf; '>/**</span>
+      <span style='color:#3f5fbf; '>&#xa0;&#xa0;&#xa0;&#xa0;* Method insert() is the powerhouse of the class. Its purpose is to take a signed char and insert</span>
+      <span style='color:#3f5fbf; '>&#xa0;&#xa0;&#xa0;&#xa0;* it into the array while ensuring that at the end of the array is sorted in ascending order.</span>
+      <span style='color:#3f5fbf; '>&#xa0;&#xa0;&#xa0;&#xa0;* Each time a new element is inserted to the array, once insert completes the array must be in</span>
+      <span style='color:#3f5fbf; '>&#xa0;&#xa0;&#xa0;&#xa0;* sorted state.</span>
+      <span style='color:#3f5fbf; '>&#xa0;&#xa0;&#xa0;&#xa0;*/</span>
+          <span style='color:#400000; font-weight:bold; '>void</span> insert<span style='color:#806030; '>(</span><span style='color:#400000; font-weight:bold; '>signed</span> <span style='color:#400000; font-weight:bold; '>char</span> c<span style='color:#806030; '>)</span><span style='color:#806030; '>{</span>
+            <span style='color:#400000; font-weight:bold; '>if</span><span style='color:#806030; '>(</span>size_<span style='color:#806030; '>=</span><span style='color:#806030; '>=</span><span style='color:#c00000; '>0</span><span style='color:#806030; '>)</span><span style='color:#806030; '>{</span>ptr_ <span style='color:#806030; '>=</span> <span style='color:#400000; font-weight:bold; '>new</span> <span style='color:#400000; font-weight:bold; '>signed</span> <span style='color:#400000; font-weight:bold; '>char</span><span style='color:#806030; '>[</span>cap<span style='color:#806030; '>]</span><span style='color:#806030; '>;</span><span style='color:#806030; '>}</span>
+
+          ptr_<span style='color:#806030; '>[</span>size_<span style='color:#806030; '>]</span><span style='color:#806030; '>=</span>c<span style='color:#806030; '>;</span>
+          size_<span style='color:#806030; '>+</span><span style='color:#806030; '>+</span><span style='color:#806030; '>;</span>
+          <span style='color:#400000; font-weight:bold; '>if</span><span style='color:#806030; '>(</span>size_<span style='color:#806030; '>=</span><span style='color:#806030; '>=</span>cap<span style='color:#806030; '>-</span><span style='color:#c00000; '>1</span><span style='color:#806030; '>)</span><span style='color:#806030; '>{</span>
+            cap<span style='color:#806030; '>=</span>cap<span style='color:#806030; '>*</span><span style='color:#c00000; '>2</span><span style='color:#806030; '>;</span>
+            <span style='color:#400000; font-weight:bold; '>signed</span> <span style='color:#400000; font-weight:bold; '>char</span><span style='color:#806030; '>*</span> temp <span style='color:#806030; '>=</span> <span style='color:#400000; font-weight:bold; '>new</span> <span style='color:#400000; font-weight:bold; '>signed</span> <span style='color:#400000; font-weight:bold; '>char</span><span style='color:#806030; '>[</span>cap<span style='color:#806030; '>]</span><span style='color:#806030; '>;</span>
+            <span style='color:#800040; '>copy</span><span style='color:#806030; '>(</span>ptr_<span style='color:#806030; '>,</span>ptr_<span style='color:#806030; '>+</span>size_<span style='color:#806030; '>,</span>temp<span style='color:#806030; '>)</span><span style='color:#806030; '>;</span>
+            <span style='color:#400000; font-weight:bold; '>delete</span><span style='color:#806030; '>[</span><span style='color:#806030; '>]</span> ptr_<span style='color:#806030; '>;</span>
+            ptr_<span style='color:#806030; '>=</span>temp<span style='color:#806030; '>;</span>
+          <span style='color:#806030; '>}</span>
+
+
+
+          <span style='color:#806030; '>}</span>
+
+
+      <span style='color:#400000; font-weight:bold; '>private</span><span style='color:#e34adc; '>:</span>
+          <span style='color:#400000; font-weight:bold; '>int</span> cap<span style='color:#806030; '>=</span><span style='color:#c00000; '>4096</span><span style='color:#806030; '>/</span> <span style='color:#400000; font-weight:bold; '>sizeof</span> ptr_<span style='color:#806030; '>;</span>
+          <span style='color:#400000; font-weight:bold; '>int</span> size_<span style='color:#806030; '>;</span>         <span style='color:#c34e00; '>// size of the array</span>
+          <span style='color:#400000; font-weight:bold; '>signed</span> <span style='color:#400000; font-weight:bold; '>char</span><span style='color:#806030; '>*</span> ptr_<span style='color:#806030; '>;</span> <span style='color:#c34e00; '>// pointer to the array</span>
+
+      <span style='color:#806030; '>}</span><span style='color:#806030; '>;</span> <span style='color:#c34e00; '>// class sorted_sc_array</span>
+
+      <span style='color:#004a43; '>#</span><span style='color:#004a43; '>endif</span><span style='color:#004a43; '> </span><span style='color:#c34e00; '>// A2_HPP</span>
+      </pre>
+      <!--Created using ToHtml.com on 2019-04-25 15:28:11 UTC -->
+
+    </div>
+  </body>
+</html>

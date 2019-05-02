@@ -1,0 +1,161 @@
+a{
+  color: white;
+}
+.head{
+  top: 0%;
+  left: 0%;
+  /* I might change the positio fixed and for a good reason.
+  The profile picture will also move along with the head master and it will look weird, so it's best to change the position to absolete. */
+  position: absolute;
+  min-height: 15%;
+  max-height: 20%;
+  width: 100%;
+  display: block;
+
+
+}
+
+.main_body{
+  background-color: #C0C0C0;
+  display: block;
+}
+#header{
+  position: absolute;
+  text-align: center;
+  top: 20%;
+  float: left;
+  font-family: serif;
+}
+#header_two{
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  float: left;
+  font-family: serif;
+}
+#about_me{
+  position: absolute;
+  text-align: center;
+  top: 30%;
+  height: 20%;
+  float: left;
+  font-family: serif;
+  display: block;
+  overflow: auto;
+}
+#what_do_i_do{
+  position: absolute;
+  text-align: center;
+  top: 60%;
+  height: 15%;
+  float: left;
+  font-family: serif;
+  display: block;
+  overflow: auto;
+  background: transparent;
+}
+#passions{
+  position: absolute;
+  text-align: center;
+  top: 83%;
+  height: 15%;
+  float: left;
+  font-family: serif;
+  display: block;
+  overflow: auto;
+}
+#header_three{
+  position: absolute;
+  text-align: center;
+  top: 75%;
+  float: left;
+  font-family: serif;
+}
+
+#dan_palacio_profile_picture{
+  float: left;
+  position: absolute;
+  top: 2%;
+  left: 2%;
+  top: 15%;
+  width: 100px;
+  height: 100px;
+  border: 5px solid #424949;
+  border-radius: 6px;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+    top:0%;
+    left: 0%;
+    background-color: #FFA500;
+    width: 100%;
+    max-height: 60px;
+    height: 60px;
+    display: block;
+    clear: both;
+}
+
+li {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 20px 55px;
+    text-decoration: none;
+}
+#projects_center{
+  text-align: center;
+  color: white;
+  padding: 20px 50px;
+  float: none;
+}
+.back{
+  position: absolute;
+  color: white;
+  font-family: serif;
+}
+#project_table{
+  position: absolute;
+  width: 100%;
+  top: 15%;
+  left: 0%;
+  font-family: serif;
+  border-radius: 15px;
+  padding: 20px;
+  background-color: #D3D3D3;
+
+}
+.row{
+  text-align: center;
+  font-family: Palatino;
+  font-size: large;
+}
+.code_link{
+  color: blue;
+}
+.row_descripton{
+  font-size: medium;
+  width: 70%;
+  font-family: Palatino;
+}
+tr{
+  border-style: solid;
+  border-width: 5px;
+}
+#code_in_bubble_smart{
+  position: absolute;
+  top: 15%;
+  left: 20%;
+  border: 8px solid #424949;
+  border-radius: 20px;
+}
+#code_in_bubble_kmer{
+  position: absolute;
+  top: 15%;
+  left: 6%;
+  border: 8px solid #424949;
+  border-radius: 20px;
+}

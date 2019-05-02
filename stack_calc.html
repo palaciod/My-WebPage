@@ -1,0 +1,38 @@
+<!DOCTYPE>
+<html>
+  <link rel="stylesheet" type="text/css" href="daniel_palacio.css">
+  <title>Stack Calculator</title>
+  <div class="head">
+    <h3 class="back"><a href="projects.html">Back</a></h3>
+    <ul>
+      <li id="projects_center">Stack Calculator</li>
+    </ul>
+  </div>
+  <body class="main_body">
+    <div id="code_in_bubble_kmer">
+      <pre style='color:#000000;background:#f1f0f0;'><span style='color:#004a43; '>#</span><span style='color:#004a43; '>include </span><span style='color:#800000; '>"</span><span style='color:#40015a; '>token.hpp</span><span style='color:#800000; '>"</span>
+      <span style='color:#004a43; '>#</span><span style='color:#004a43; '>include </span><span style='color:#800000; '>"</span><span style='color:#40015a; '>stackCalc.hpp</span><span style='color:#800000; '>"</span>
+
+      <span style='color:#004a43; '>#</span><span style='color:#004a43; '>include </span><span style='color:#800000; '>&lt;</span><span style='color:#40015a; '>iostream</span><span style='color:#800000; '>></span>
+      <span style='color:#004a43; '>#</span><span style='color:#004a43; '>include </span><span style='color:#800000; '>&lt;</span><span style='color:#40015a; '>vector</span><span style='color:#800000; '>></span>
+
+      <span style='color:#400000; font-weight:bold; '>int</span> <span style='color:#800000; font-weight:bold; '>main</span><span style='color:#806030; '>(</span><span style='color:#400000; font-weight:bold; '>int</span> argc<span style='color:#806030; '>,</span> <span style='color:#400000; font-weight:bold; '>char</span><span style='color:#806030; '>*</span> argv<span style='color:#806030; '>[</span><span style='color:#806030; '>]</span><span style='color:#806030; '>)</span> <span style='color:#806030; '>{</span>
+        <span style='color:#00dddd; '>std</span><span style='color:#806030; '>::</span><span style='color:#800040; '>vector</span><span style='color:#806030; '>&lt;</span>token<span style='color:#806030; '>></span> tokens<span style='color:#806030; '>;</span>
+
+        <span style='color:#00dddd; '>std</span><span style='color:#806030; '>::</span><span style='color:#800040; '>string</span> s<span style='color:#806030; '>;</span>
+        <span style='color:#400000; font-weight:bold; '>while</span> <span style='color:#806030; '>(</span><span style='color:#00dddd; '>std</span><span style='color:#806030; '>::</span><span style='color:#800040; '>cin</span> <span style='color:#806030; '>></span><span style='color:#806030; '>></span> s<span style='color:#806030; '>)</span> tokens<span style='color:#806030; '>.</span>push_back<span style='color:#806030; '>(</span>to_token<span style='color:#806030; '>(</span>s<span style='color:#806030; '>)</span><span style='color:#806030; '>)</span><span style='color:#806030; '>;</span>
+        <span style='color:#400000; font-weight:bold; '>try</span> <span style='color:#806030; '>{</span>
+            <span style='color:#400000; font-weight:bold; '>double</span> d <span style='color:#806030; '>=</span> RPN<span style='color:#806030; '>(</span>tokens<span style='color:#806030; '>.</span>begin<span style='color:#806030; '>(</span><span style='color:#806030; '>)</span><span style='color:#806030; '>,</span> tokens<span style='color:#806030; '>.</span>end<span style='color:#806030; '>(</span><span style='color:#806030; '>)</span><span style='color:#806030; '>)</span><span style='color:#806030; '>;</span>
+            <span style='color:#00dddd; '>std</span><span style='color:#806030; '>::</span><span style='color:#800040; '>cout</span> <span style='color:#806030; '>&lt;</span><span style='color:#806030; '>&lt;</span> d <span style='color:#806030; '>&lt;</span><span style='color:#806030; '>&lt;</span> <span style='color:#00dddd; '>std</span><span style='color:#806030; '>::</span><span style='color:#800040; '>endl</span><span style='color:#806030; '>;</span>
+        <span style='color:#806030; '>}</span> <span style='color:#400000; font-weight:bold; '>catch</span> <span style='color:#806030; '>(</span><span style='color:#806030; '>.</span><span style='color:#806030; '>.</span><span style='color:#806030; '>.</span><span style='color:#806030; '>)</span> <span style='color:#806030; '>{</span>
+            <span style='color:#00dddd; '>std</span><span style='color:#806030; '>::</span><span style='color:#800040; '>cout</span> <span style='color:#806030; '>&lt;</span><span style='color:#806030; '>&lt;</span> <span style='color:#800000; '>"</span><span style='color:#e60000; '>error</span><span style='color:#800000; '>"</span> <span style='color:#806030; '>&lt;</span><span style='color:#806030; '>&lt;</span> <span style='color:#00dddd; '>std</span><span style='color:#806030; '>::</span><span style='color:#800040; '>endl</span><span style='color:#806030; '>;</span>
+        <span style='color:#806030; '>}</span>
+
+        <span style='color:#400000; font-weight:bold; '>return</span> <span style='color:#c00000; '>0</span><span style='color:#806030; '>;</span>
+      <span style='color:#806030; '>}</span> <span style='color:#c34e00; '>// main</span>
+      </pre>
+      <!--Created using ToHtml.com on 2019-04-30 14:39:47 UTC -->
+
+    </div>
+  </body>
+</html>
